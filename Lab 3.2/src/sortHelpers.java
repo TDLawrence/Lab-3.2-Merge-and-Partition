@@ -31,4 +31,13 @@ public class sortHelpers {
 	}
 	  return merged;
 }
+	public static int partition(int[]list1)
+	{for(int n=1;n<list1.length;n++)
+	 {if (list1[n]<list1[0])
+	   {
+		 
+	   }
+		
+	 }
+	}
 }
