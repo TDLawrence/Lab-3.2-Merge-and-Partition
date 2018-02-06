@@ -17,6 +17,14 @@ public class sortHelpers {
 	      }
 		  
 	      }
+	      {if((r<list2.length)&&(r<list2.length)&&(list1[l].compareTo(list2[r])==0))
+	      {merged[n]=list2[r];  
+	       r++;
+	       l++;
+	       n++;
+	      }
+		  
+	      }
 	      {if(l>list1.length)
 		     {merged[n]=list2[r];
 			   
@@ -32,22 +40,35 @@ public class sortHelpers {
 	  return merged;
 }
 	public static int partition(int[]list1)
-	{int[]ordered=new int[list1.length];
-	 int index=0;
-	for(int n=1;n<list1.length;n++)
-	     { int x=0;
-	       int y=list1.length;
-		   
+	{
+	 
+	 int x=0;
+     int y=list1.length;
+	 while(x!=y)
+	     { int j=0;
+		   int z=0;
+	       int n=1;
 	       if (list1[n]<list1[0])
-	       {list1[n]=ordered[x];
-	       x++;}
+	       {j=list1[n];
+	        list1[n]=list1[x];
+	        list1[x]=j;
+	       x++;
+	       n++;}
 	       
 	       if (list1[n]>list1[0])
-		  {list1[n]=ordered[y];
-		   y--;}
-	     index=x+1;	 
+		  {j=list1[n];
+		   list1[n]=list1[y];
+		   list1[y]=j;
+		   y--;
+		   n++;}
+	       if(list1[n]==list1[0])
+	      {z++;
+	       list1[n]=list1[z];	   
+	       n++;
+	      }
+		 
 	     }
-	 return index;
+	 return x;
 	 }
 	
 }
