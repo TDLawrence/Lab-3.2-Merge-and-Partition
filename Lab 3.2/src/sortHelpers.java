@@ -2,7 +2,7 @@ import java.util.Arrays;
 
 public class sortHelpers {
     public static void main(String[]args)
-    {String[]test1= {"dog","cat","hamster","zebra"};
+    {String[]test1= {"cat","dog","hamster","zebra"};
      String[]test2= {"aardvark","cat","horse","pig"};
      int[]test3= {2,1,5,6,9,3,7};
      System.out.println(Arrays.toString(merge(test1,test2)));
@@ -14,42 +14,45 @@ public class sortHelpers {
 	
 	public static String[] merge(String[]list1,String[]list2)
 	{String[]merged=new String[list1.length+list2.length];
-	  for(int n=0;n<merged.length;n++)
-	  {int l=0;
+	  int l=0;
 	   int r=0;
+	  for(int n=0;n<merged.length;n++)
+	  {
 	   
-	      {if((l<list1.length)&&(r<list2.length)&&(list1[l].compareTo(list2[r])<0))
+	      if((l<list1.length)&&(r<list2.length)&&(list1[l].compareTo(list2[r])<0))
 	    	{merged[n]=list1[l];
-	        l++;}
-	      }
-	      {if((r<list2.length)&&(r<list2.length)&&(list1[l].compareTo(list2[r])>0))
+	         l++;}
+	      
+	      if((l<list1.length)&&(r<list2.length)&&(list1[l].compareTo(list2[r])>0))
 	      {merged[n]=list2[r];  
 	       r++;
 	      }
 		  
-	      }
-	      {if((r<list2.length)&&(r<list2.length)&&(list1[l].compareTo(list2[r])==0))
-	      {merged[n]=list2[r];  
+	      
+	      if((l<list1.length)&&(r<list2.length)&&(list1[l].compareTo(list2[r])==0))
+	      {merged[n]=list2[r]; 
+	       merged[n+1]=list2[l];
 	       r++;
 	       l++;
 	       n++;
 	      }
 		  
-	      }
-	      {if(l>list1.length)
+	      
+	      if((l>=list1.length)&&(r<list2.length))
 		     {merged[n]=list2[r];
-			   
+			   r++;
 		     }
-		   }
-	      {if(r>list2.length)
+		   
+	      if((r>=list2.length)&&(l<list1.length))
 	       {merged[n]=list1[l];
-	       }
+	       l++;}
+	       
 		  
 	  }
-	  	
-	}
 	  return merged;
-}
+	}
+	
+
 	public static int partition(int[]list1)
 	{
 	 
