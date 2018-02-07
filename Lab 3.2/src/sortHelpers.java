@@ -1,6 +1,17 @@
+import java.util.Arrays;
 
 public class sortHelpers {
-
+    public static void main(String[]args)
+    {String[]test1= {"dog","cat","hamster","zebra"};
+     String[]test2= {"aardvark","cat","horse","pig"};
+     int[]test3= {2,1,5,6,9,3,7};
+     System.out.println(Arrays.toString(merge(test1,test2)));
+     System.out.println(partition(test3));
+    	
+    }
+	
+	
+	
 	public static String[] merge(String[]list1,String[]list2)
 	{String[]merged=new String[list1.length+list2.length];
 	  for(int n=0;n<merged.length;n++)
@@ -43,7 +54,7 @@ public class sortHelpers {
 	{
 	 
 	 int x=0;
-     int y=list1.length;
+     int y=list1.length-1;
 	 while(x!=y)
 	     { int j=0;
 		   int z=0;
