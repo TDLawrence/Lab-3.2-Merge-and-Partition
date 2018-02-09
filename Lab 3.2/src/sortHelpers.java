@@ -23,27 +23,27 @@ public class sortHelpers {
 	    	{merged[n]=list1[l];
 	         l++;}
 	      
-	      if((l<list1.length)&&(r<list2.length)&&(list1[l].compareTo(list2[r])>0))
+	      else if((l<list1.length)&&(r<list2.length)&&(list1[l].compareTo(list2[r])>0))
 	      {merged[n]=list2[r];  
 	       r++;
 	      }
 		  
 	      
-	      if((l<list1.length)&&(r<list2.length)&&(list1[l].compareTo(list2[r])==0))
+	      else if((l<list1.length)&&(r<list2.length)&&(list1[l].compareTo(list2[r])==0))
 	      {merged[n]=list2[r]; 
-	       merged[n+1]=list2[l];
+	       merged[n+1]=list1[l];
 	       r++;
 	       l++;
 	       n++;
 	      }
 		  
 	      
-	      if((l>=list1.length)&&(r<list2.length))
+	      else if((l>=list1.length)&&(r<list2.length))
 		     {merged[n]=list2[r];
 			   r++;
 		     }
 		   
-	      if((r>=list2.length)&&(l<list1.length))
+	      else if((r>=list2.length)&&(l<list1.length))
 	       {merged[n]=list1[l];
 	       l++;}
 	       
